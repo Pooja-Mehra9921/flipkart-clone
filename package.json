@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "name": "flipkart-clone",
+  "version": "1.0.0",
+  "description": "this project is just for learning purpose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "learning",
+    "react",
+    "practice"
+  ],
+  "author": "pooja mehra",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  }
+}

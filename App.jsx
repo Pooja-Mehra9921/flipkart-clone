@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import LoginPage from "./src/pages/LoginPage";
 
 
@@ -8,10 +8,9 @@ const App =()=>{
 <>
         <BrowserRouter>
         <Routes>
-            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/" element={<LoginPage/>}/>
         </Routes>
         </BrowserRouter>
-        this is a app fil
         </>
     )
 };

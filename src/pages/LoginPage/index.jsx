@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import FLIPKART_IMAGE from "../../assents/images/flipkart-image.png";
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -33,6 +33,10 @@ const LoginPage =()=>{
       <input type="email" />
       <Typography>Password</Typography>
       <input type="password" />
+     </Box>
+     <Box className="button-container">
+      <Button>Login</Button>
+      <Button>Signup</Button>
      </Box>
     </Box>
   </Paper>

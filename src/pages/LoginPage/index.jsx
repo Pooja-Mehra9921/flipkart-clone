@@ -27,6 +27,13 @@ const LoginPage =()=>{
       <Typography style={{fontWeight:"600"}} variant="body">Login</Typography>
       <Typography variant="body1">Get access to your orders, whishlist and Recommendations</Typography>
      </Box>
+
+     <Box className="inputfield-container">
+      <Typography>Email</Typography>
+      <input type="email" />
+      <Typography>Password</Typography>
+      <input type="password" />
+     </Box>
     </Box>
   </Paper>
 </Box>

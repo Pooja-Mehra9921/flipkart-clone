@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import LoginPage from "./src/pages/LoginPage";
+import HomePage from "../flipkart-clone/src/pages/HomePage"
 
 
 const App =()=>{
@@ -8,7 +9,8 @@ const App =()=>{
 <>
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<LoginPage/>}/>
+            <Route exact path="/" element={<HomePage/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
         </Routes>
         </BrowserRouter>
         </>

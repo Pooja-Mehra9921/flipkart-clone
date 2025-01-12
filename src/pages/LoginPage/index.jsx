@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Box, Button, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, TextField, Typography } from "@mui/material";
 import FLIPKART_IMAGE from "../../assents/images/flipkart-image.png";
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -30,9 +30,20 @@ const LoginPage =()=>{
 
      <Box className="inputfield-container">
       <Typography>Email</Typography>
-      <input type="email" />
+      <TextField
+          id="filled-search"
+          label="Email"
+          type="Email"
+          fullWidth
+
+        />
       <Typography>Password</Typography>
-      <input type="password" />
+      <TextField
+          id="filled-search"
+          label="Password"
+          type="password"
+          fullWidth
+        />
      </Box>
      <Box className="button-container">
       <Button>Login</Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, IconButton, InputAdornment, Paper, TextField, Typography } from "@mui/material";
 import FLIPKART_IMAGE from "../../assents/images/flipkart-image.png";
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -33,6 +33,21 @@ const FLIPKART_IMAGE_STYLING ={
         <TextField 
         fullWidth
         size="small"
+        type="email"
+        /> 
+        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px"}}>Enter Password</Typography>
+
+         <TextField 
+        fullWidth
+        size="small"
+        type="password"
+        slotProps={{
+          input: {
+            endAdornment: <InputAdornment style={{cursor:"pointer"}} position="end">
+              <IconButton></IconButton>
+            </InputAdornment>,
+          },
+        }}
         />    
       </Grid>
     </Grid>

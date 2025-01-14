@@ -25,7 +25,16 @@ const FLIPKART_IMAGE_STYLING ={
       <Grid item xs={12} sm={12} md={6} lg={6} className="fk-left-sec">
         <Box style={FLIPKART_IMAGE_STYLING}></Box>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} lg={6} className="fk-right-sec">right</Grid>
+      <Grid item xs={12} sm={12} md={6} lg={6} className="fk-right-sec">
+        <Typography variant="h6">Login</Typography>
+        <Typography variant="body" style={{fontSize:"12px", color:"grey"}}>Get access to yours Orders, Whishlists and Recommandations</Typography>   
+
+        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px"}}>Enter Email/Mobile number</Typography>
+        <TextField 
+        fullWidth
+        size="small"
+        />    
+      </Grid>
     </Grid>
   </Paper>
 </Box>

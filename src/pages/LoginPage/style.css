@@ -1,20 +1,25 @@
 
 
 .login-container{
-    min-height: 500px;
-    width: 50%;
+    width: 100%;
     display: flex;
     margin: 5% auto;
 }
-
-.left-flipkart-section, .right-flipkart-section{
-    width: 50%;
+.login-container .login-paper{
+    width: 60%;
+    min-height: 400px;
+    margin: 2% auto;
 }
 
-.close-icon{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 10px;
-    cursor: pointer;
+.login-container .fk-left-sec{
+    width: 50%;  
+    background-color: red;
+    margin: 0;
+    padding: 0;
+
 }
+
+.login-container .fk-right-sec{
+    width: 50%;  
+}
+

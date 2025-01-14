@@ -1,58 +1,36 @@
 import React from "react";
 import "./style.css";
-import { Box, Button, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import FLIPKART_IMAGE from "../../assents/images/flipkart-image.png";
 import CloseIcon from '@mui/icons-material/Close';
 
 
 const LoginPage =()=>{
+const FLIPKART_IMAGE_STYLING ={
+  backgroundImage : `url(${FLIPKART_IMAGE})`,
+  height: "400px",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  margin:"0",
+  padding:"0",
 
+}
 
 
     return(
         <>
-      <Box className="main-container">
-<Box>
-  <Paper className="login-container" elevation={3}>
-
-    <Box className="left-flipkart-section">
-      <img style={{width:"100%", height:"100%"}} src={FLIPKART_IMAGE} alt="flipkart-image" />
-    </Box>
-    <Box className="right-flipkart-section">
-      <Box className="close-icon">
-        <CloseIcon/>
-      </Box>
-     
-     <Box className="text-container">
-      <Typography style={{fontWeight:"600"}} variant="body">Login</Typography>
-      <Typography variant="body1">Get access to your orders, whishlist and Recommendations</Typography>
-     </Box>
-
-     <Box className="inputfield-container">
-      <Typography>Email</Typography>
-      <TextField
-          id="filled-search"
-          label="Email"
-          type="Email"
-          fullWidth
-
-        />
-      <Typography>Password</Typography>
-      <TextField
-          id="filled-search"
-          label="Password"
-          type="password"
-          fullWidth
-        />
-     </Box>
-     <Box className="button-container">
-      <Button>Login</Button>
-      <Button>Signup</Button>
-     </Box>
-    </Box>
+<Box className="login-container">
+  <Paper elevation={20} className="login-paper">
+    <Grid container>
+      <Grid item xs={12} sm={12} md={6} lg={6} className="fk-left-sec">
+        <Box style={FLIPKART_IMAGE_STYLING}></Box>
+      </Grid>
+      <Grid item xs={12} sm={12} md={6} lg={6} className="fk-right-sec">right</Grid>
+    </Grid>
   </Paper>
 </Box>
-      </Box>
+
+    
         
      
         </>

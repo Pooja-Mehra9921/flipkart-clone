@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Box, Button, Grid, IconButton, InputAdornment, Paper, TextField, Typography } from "@mui/material";
 import FLIPKART_IMAGE from "../../assents/images/flipkart-image.png";
-import CloseIcon from '@mui/icons-material/Close';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import ReCAPTCHA from "react-google-recaptcha";
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 
 const LoginPage =()=>{
+
+const [show, setshow] = useState(true);
+
+
+
+
+
+const handlePasswordicon =()=>{
+  console.log("i goott click----");
+  setshow(!show);
+}
+
 const FLIPKART_IMAGE_STYLING ={
   backgroundImage : `url(${FLIPKART_IMAGE})`,
-  height: "400px",
+  height: "500px",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   margin:"0",
@@ -26,16 +42,25 @@ const FLIPKART_IMAGE_STYLING ={
         <Box style={FLIPKART_IMAGE_STYLING}></Box>
       </Grid>
       <Grid item xs={12} sm={12} md={6} lg={6} className="fk-right-sec">
-        <Typography variant="h6">Login</Typography>
+        <Box style={{ textAlign:"end", cursor:"pointer"}}><CancelOutlinedIcon/></Box>
+        <Typography variant="h6" style={{fontWeight:"600", marginTop:"5px"}}>Login</Typography>
         <Typography variant="body" style={{fontSize:"12px", color:"grey"}}>Get access to yours Orders, Whishlists and Recommandations</Typography>   
 
-        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px"}}>Enter Email/Mobile number</Typography>
+        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px", marginTop:"40px"}}>Enter Email</Typography>
         <TextField 
+        id="emailfield"
         fullWidth
         size="small"
         type="email"
+        slotProps={{
+          input: {
+            endAdornment: <InputAdornment style={{cursor:"pointer"}} position="end">
+              <EmailOutlinedIcon/>
+            </InputAdornment>,
+          },
+        }}
         /> 
-        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px"}}>Enter Password</Typography>
+        <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px", marginTop:"15px"}}>Enter Password</Typography>
 
          <TextField 
         fullWidth
@@ -44,11 +69,21 @@ const FLIPKART_IMAGE_STYLING ={
         slotProps={{
           input: {
             endAdornment: <InputAdornment style={{cursor:"pointer"}} position="end">
-              <IconButton></IconButton>
+              <IconButton onClick={handlePasswordicon}>
+                {show ? <VisibilityOffOutlinedIcon/> : <VisibilityOutlinedIcon/>}
+
+              </IconButton>
             </InputAdornment>,
           },
         }}
-        />    
+        />  
+
+        <ReCAPTCHA style={{margin:"20px"}} sitekey="6LfVGrgqAAAAAGjTWFRSOHUd-jb200e9DMksaXG7"/>
+
+        <Box className="btn-container">
+          <Button className="btn" variant="contained">Login</Button>
+          <Button className="btn" variant="outlined">Sign up</Button>
+          </Box>  
       </Grid>
     </Grid>
   </Paper>

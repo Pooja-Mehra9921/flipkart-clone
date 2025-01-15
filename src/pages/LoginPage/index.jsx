@@ -12,10 +12,17 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 const LoginPage =()=>{
 
 const [show, setshow] = useState(true);
+const [email, setemail] = useState("");
 
 
+const CREDENCIAL_FOR_LOGIN ={
+  email:"user123@gmail.com",
+  password:"user1234",
+}
 
-
+const handleEmail=(e)=>{
+console.log("inputttt element----", e.target.value);
+}
 
 const handlePasswordicon =()=>{
   console.log("i goott click----");
@@ -59,6 +66,8 @@ const FLIPKART_IMAGE_STYLING ={
             </InputAdornment>,
           },
         }}
+
+        onChange={handleEmail}
         /> 
         <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px", marginTop:"15px"}}>Enter Password</Typography>
 

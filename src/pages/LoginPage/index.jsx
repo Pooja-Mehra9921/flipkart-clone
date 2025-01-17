@@ -15,18 +15,36 @@ const [show, setshow] = useState(true);
 const [email, setemail] = useState("");
 
 
+
+const USER_DATA = {
+  name :"",
+  password :""
+}
+
 const CREDENCIAL_FOR_LOGIN ={
   email:"user123@gmail.com",
   password:"user1234",
 }
 
 const handleEmail=(e)=>{
-console.log("inputttt element----", e.target.value);
+const userEmail = e.target.value;
+console.log(userEmail);
+}
+
+
+const handlePassword =(e)=>{
+  const userPassword = e.target.value;
+console.log(userPassword);
+
 }
 
 const handlePasswordicon =()=>{
   console.log("i goott click----");
   setshow(!show);
+}
+
+const handleLogin =()=>{
+  console.log("loginnnnnnsubmint-----------");
 }
 
 const FLIPKART_IMAGE_STYLING ={
@@ -61,7 +79,7 @@ const FLIPKART_IMAGE_STYLING ={
         type="email"
         slotProps={{
           input: {
-            endAdornment: <InputAdornment style={{cursor:"pointer"}} position="end">
+            endAdornment: <InputAdornment  position="end">
               <EmailOutlinedIcon/>
             </InputAdornment>,
           },
@@ -72,25 +90,26 @@ const FLIPKART_IMAGE_STYLING ={
         <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px", marginTop:"15px"}}>Enter Password</Typography>
 
          <TextField 
+         onChange={handlePassword}
         fullWidth
         size="small"
-        type="password"
-        slotProps={{
-          input: {
-            endAdornment: <InputAdornment style={{cursor:"pointer"}} position="end">
+        type={show ? "password" : "text" }
+        InputProps={{
+         
+            endAdornment:( <InputAdornment style={{cursor:"pointer"}} position="end">
               <IconButton onClick={handlePasswordicon}>
                 {show ? <VisibilityOffOutlinedIcon/> : <VisibilityOutlinedIcon/>}
 
               </IconButton>
-            </InputAdornment>,
-          },
+            </InputAdornment>
+            ),
         }}
         />  
 
         <ReCAPTCHA style={{margin:"20px"}} sitekey="6LfVGrgqAAAAAGjTWFRSOHUd-jb200e9DMksaXG7"/>
 
         <Box className="btn-container">
-          <Button className="btn" variant="contained">Login</Button>
+          <Button className="btn" variant="contained" onClick={handleLogin}>Login</Button>
           <Button className="btn" variant="outlined">Sign up</Button>
           </Box>  
       </Grid>

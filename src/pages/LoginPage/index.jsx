@@ -12,40 +12,24 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 const LoginPage =()=>{
 
 const [show, setshow] = useState(true);
+const [logindata, setlogindata] =useState("");
 const [email, setemail] = useState("");
 
 
 
-const USER_DATA = {
-  name :"",
-  password :""
-}
-
-const CREDENCIAL_FOR_LOGIN ={
-  email:"user123@gmail.com",
-  password:"user1234",
-}
-
-const handleEmail=(e)=>{
-const userEmail = e.target.value;
-console.log(userEmail);
-}
 
 
-const handlePassword =(e)=>{
-  const userPassword = e.target.value;
-console.log(userPassword);
 
-}
+
+
+
+
 
 const handlePasswordicon =()=>{
   console.log("i goott click----");
   setshow(!show);
 }
 
-const handleLogin =()=>{
-  console.log("loginnnnnnsubmint-----------");
-}
 
 const FLIPKART_IMAGE_STYLING ={
   backgroundImage : `url(${FLIPKART_IMAGE})`,
@@ -85,12 +69,10 @@ const FLIPKART_IMAGE_STYLING ={
           },
         }}
 
-        onChange={handleEmail}
         /> 
         <Typography variant="body2" style={{fontWeight:"600", fontSize:"12px", marginTop:"15px"}}>Enter Password</Typography>
 
          <TextField 
-         onChange={handlePassword}
         fullWidth
         size="small"
         type={show ? "password" : "text" }
@@ -109,7 +91,7 @@ const FLIPKART_IMAGE_STYLING ={
         <ReCAPTCHA style={{margin:"20px"}} sitekey="6LfVGrgqAAAAAGjTWFRSOHUd-jb200e9DMksaXG7"/>
 
         <Box className="btn-container">
-          <Button className="btn" variant="contained" onClick={handleLogin}>Login</Button>
+          <Button className="btn" variant="contained">Login</Button>
           <Button className="btn" variant="outlined">Sign up</Button>
           </Box>  
       </Grid>
